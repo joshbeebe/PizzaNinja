@@ -31,7 +31,7 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_Login"></activity>
+            android:label="@string/title_activity_Login" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -46,7 +46,20 @@
 
         <activity
             android:name=".FindStoreActivity"
-            android:label="@string/title_activity_find_store"></activity>
+            android:label="@string/title_activity_find_store" />
+        <activity
+            android:name=".RatingsActivity"
+            android:label="@string/title_activity_ratings"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".MenuActivity" />
+        <activity
+            android:name=".SpecialsActivity"
+            android:label="@string/title_activity_specials"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ConfirmOrderActivity"
+            android:label="@string/title_activity_confirm_order"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

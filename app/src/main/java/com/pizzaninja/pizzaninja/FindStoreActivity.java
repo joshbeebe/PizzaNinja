@@ -1,7 +1,9 @@
 package com.pizzaninja.pizzaninja;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -22,6 +24,17 @@ public class FindStoreActivity extends FragmentActivity implements OnMapReadyCal
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+    }
+
+    public void OpenRatings(View view)
+    {
+        Intent intent = new Intent(FindStoreActivity.this, RatingsActivity.class);
+        startActivity(intent);
+    }
+
+    public void CloseView(View view)
+    {
+        finish();
     }
 
 

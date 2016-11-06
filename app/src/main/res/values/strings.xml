@@ -3,7 +3,7 @@
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
+    <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign In</string>
     <string name="action_sign_in_short">Sign In</string>
     <string name="error_invalid_email">This email address is invalid</string>
@@ -17,4 +17,25 @@
     <string name="title_activity_main_menu">Main Menu</string>
     <string name="action_find_store">Find Store</string>
     <string name="title_activity_find_store">Find Store</string>
+
+    <string name="action_select_store">Select</string>
+    <string name="action_view_ratings">View Ratings</string>
+    <string name="title_activity_ratings">RatingsActivity</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="store_number">Store #546 Rating</string>
+    <string name="drivers_rating">Driver Ratings</string>
+    <string name="driver_1">Jerry Jones</string>
+    <string name="driver_2">Rick Harrison</string>
+    <string name="driver_3">Shelly Turner</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="view_order">View Order</string>
+    <string name="view_specials">View Specials</string>
+    <string name="title_activity_specials">SpecialsActivity</string>
+
+    <string name="spec_item1">Large 1 Topping $8.99</string>
+    <string name="action_add">Add</string>
+    <string name="spec_item2">Big Salad $4.99</string>
+    <string name="title_activity_confirm_order">ConfirmOrderActivity</string>
+    <string name="title_confirm_order">Your Order</string>
 </resources>
