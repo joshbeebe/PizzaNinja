@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pizzaninja.pizzaninja.ConfirmOrderActivity"
+    android:fitsSystemWindows="true"
+    tools:context="com.pizzaninja.pizzaninja.StatusActivity"
     android:orientation="vertical"
     android:weightSum="1">
 
@@ -17,19 +18,29 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <TextView
-        android:text="@string/title_confirm_order"
+        android:text="@string/title_order_status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textConfirmTitle"
+        android:id="@+id/textStatusTitle"
         android:layout_marginTop="20dp"
         android:textSize="24sp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:text="@string/title_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textStatus"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="20dp"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="18sp" />
 
     <include layout="@layout/content_confirm_order"
         android:layout_width="match_parent"
-        android:layout_weight="0.72"
-        android:layout_height="380dp" />
+        android:layout_weight="0.42"
+        android:layout_height="360dp" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -37,30 +48,20 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:gravity="center_vertical">
-
-        <Switch
-            android:text="Carry Out"
-            android:layout_height="wrap_content"
-            android:id="@+id/switchOrderType"
-            android:layout_weight="0"
-            android:textSize="18sp"
-            android:layout_width="wrap_content"
-            android:fontFamily="sans-serif" />
+        android:gravity="center_vertical|center_horizontal">
 
         <TextView
             android:text="Delivery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textDelivery"
-            android:layout_weight="0"
             android:textSize="18sp"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:layout_marginRight="50dp" />
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_marginLeft="40dp">
 
@@ -83,30 +84,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_marginBottom="20dp">
 
         <Button
-            android:id="@+id/buttonCancel"
+            android:id="@+id/buttonRate"
             android:layout_height="wrap_content"
-            android:text="@string/action_cancel"
+            android:text="@string/action_rate"
             android:background="@color/colorPrimary"
             android:textColor="@android:color/white"
             android:layout_width="150dp"
             android:layout_marginRight="15dp"
-            android:onClick="Close" />
+            android:onClick="OpenRateUs" />
 
         <Button
-            android:id="@+id/buttonNext"
+            android:id="@+id/buttonOK"
             android:layout_height="wrap_content"
-            android:text="@string/action_next"
+            android:text="@string/action_ok"
             android:background="@color/colorPrimary"
             android:textColor="@android:color/white"
             android:layout_width="150dp"
             android:layout_marginLeft="15dp"
-            android:onClick="OpenCustomerInfo" />
+            android:onClick="CloseStatus" />
 
     </LinearLayout>
 

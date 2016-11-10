@@ -67,7 +67,6 @@
 
         <Button
             android:id="@+id/buttonSelect"
-            style="?android:textAppearanceMedium"
             android:layout_height="wrap_content"
             android:text="@string/action_select_store"
             android:textStyle="bold"
@@ -79,7 +78,6 @@
 
         <Button
             android:id="@+id/buttonRatings"
-            style="?android:textAppearanceMedium"
             android:layout_height="wrap_content"
             android:text="@string/action_view_ratings"
             android:textStyle="bold"

@@ -8,24 +8,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class ConfirmOrderActivity extends AppCompatActivity {
+public class StatusActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_confirm_order);
+        setContentView(R.layout.activity_status);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
     }
 
-    public void Close(View view)
+    public void OpenRateUs(View view)
     {
-        finish();
+        Intent intent = new Intent(StatusActivity.this, RateUsActivity.class);
+        startActivity(intent);
     }
 
-    public void OpenCustomerInfo(View view)
+    public void CloseStatus(View view)
     {
-        Intent intent = new Intent(ConfirmOrderActivity.this, CustomerInfoActivity.class);
-        startActivity(intent);
+        finish();
     }
 }

@@ -59,6 +59,17 @@
         <activity
             android:name=".ConfirmOrderActivity"
             android:label="@string/title_activity_confirm_order"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".CustomerInfoActivity" />
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".RateUsActivity" />
+        <activity
+            android:name=".StatusActivity"
+            android:label="@string/title_activity_status"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".BuildPizzaActivity"
+            android:label="@string/title_activity_build_pizza"
             android:theme="@style/AppTheme"></activity>
     </application>
 

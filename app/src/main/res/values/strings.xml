@@ -20,7 +20,7 @@
 
     <string name="action_select_store">Select</string>
     <string name="action_view_ratings">View Ratings</string>
-    <string name="title_activity_ratings">RatingsActivity</string>
+    <string name="title_activity_ratings">View Ratings</string>
 
     <string name="action_settings">Settings</string>
     <string name="store_number">Store #546 Rating</string>
@@ -28,14 +28,33 @@
     <string name="driver_1">Jerry Jones</string>
     <string name="driver_2">Rick Harrison</string>
     <string name="driver_3">Shelly Turner</string>
-    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_menu">Menu</string>
     <string name="view_order">View Order</string>
     <string name="view_specials">View Specials</string>
-    <string name="title_activity_specials">SpecialsActivity</string>
+    <string name="title_activity_specials">Specials</string>
 
     <string name="spec_item1">Large 1 Topping $8.99</string>
     <string name="action_add">Add</string>
     <string name="spec_item2">Big Salad $4.99</string>
-    <string name="title_activity_confirm_order">ConfirmOrderActivity</string>
+    <string name="title_activity_confirm_order">Confirm Order</string>
     <string name="title_confirm_order">Your Order</string>
+    <string name="action_remove">X</string>
+    <string name="item1_cost">$12.99</string>
+    <string name="item1_name">Large Pizza</string>
+    <string name="item1_top1">Pepperoni</string>
+    <string name="item1_top2">Mushrooms</string>
+    <string name="item1_top3">Bacon</string>
+    <string name="item2_cost">$5.99</string>
+    <string name="item2_name">Cheesy Bread</string>
+    <string name="item2_top1">Garlic Cream Cheese</string>
+    <string name="item2_top2">Garlic Butter</string>
+    <string name="action_next">Next</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_ok">OK</string>
+    <string name="action_rate">Rate</string>
+    <string name="title_activity_status">Order Status</string>
+    <string name="title_order_status">Order Details</string>
+    <string name="title_status">Status: In the Oven</string>
+    <string name="action_confirm"><![CDATA[Confirm & View Order]]></string>
+    <string name="title_activity_build_pizza">Build Pizza</string>
 </resources>
