@@ -1,5 +1,6 @@
 package com.pizzaninja.pizzaninja;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -37,5 +38,16 @@ public class ConfirmOrderActivity extends AppCompatActivity {
             items.add(i.name);
         }
         adapter.notifyDataSetChanged();
+    }
+
+    public void Close(View view)
+    {
+        finish();
+    }
+
+    public void OpenCustomerInfo(View view)
+    {
+        Intent intent = new Intent(ConfirmOrderActivity.this, CustomerInfoActivity.class);
+        startActivity(intent);
     }
 }

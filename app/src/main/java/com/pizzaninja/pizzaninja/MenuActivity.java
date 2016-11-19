@@ -44,7 +44,7 @@ public class MenuActivity extends AppCompatActivity {
 
     public void OpenOrder(View view)
     {
-        //Intent intent = new Intent(MenuActivity.this, FindStoreActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(MenuActivity.this, ConfirmOrderActivity.class);
+        startActivity(intent);
     }
 }

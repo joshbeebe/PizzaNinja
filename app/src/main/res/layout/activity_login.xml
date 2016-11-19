@@ -52,7 +52,9 @@
                         android:hint="@string/prompt_email"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
-                        android:textColor="?attr/colorPrimaryDark" />
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:textColorLink="?attr/colorPrimaryDark"
+                        tools:text="test@test.com" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -70,7 +72,9 @@
                         android:imeOptions="actionUnspecified"
                         android:inputType="textPassword"
                         android:maxLines="1"
-                        android:textColor="?attr/colorPrimaryDark" />
+                        android:textColor="?attr/colorPrimaryDark"
+                        android:textColorLink="?attr/colorPrimaryDark"
+                        android:text="test" />
 
                 </android.support.design.widget.TextInputLayout>
                 <LinearLayout
@@ -80,7 +84,6 @@
                     android:gravity="center">
                     <Button
                         android:id="@+id/email_sign_in_button"
-                        style="?android:textAppearanceMedium"
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:text="@string/action_sign_in"
