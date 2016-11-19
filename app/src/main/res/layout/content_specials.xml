@@ -16,9 +16,17 @@
         android:paddingTop="20dp"
         android:paddingBottom="20dp">
 
+        <Button
+            android:text="Confirm Order"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:id="@+id/btnConfirm"
+            android:background="@color/colorPrimary"
+            android:onClick="confirmOrder_click" />
+
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="151dp"
             app:srcCompat="@drawable/pizza2"
             android:id="@+id/imageItem1"
             android:paddingBottom="20dp" />
@@ -42,7 +50,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="162dp"
             app:srcCompat="@drawable/salad"
             android:id="@+id/imageItem2"
             android:scaleX=".75"
@@ -63,7 +71,8 @@
             android:background="@color/colorPrimary"
             android:layout_height="40dp"
             android:layout_width="130dp"
-            android:layout_marginBottom="50dp" />
+            android:layout_marginBottom="50dp"
+            android:onClick="bigSalad_click" />
 
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

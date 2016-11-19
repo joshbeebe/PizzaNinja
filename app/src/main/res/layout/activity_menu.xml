@@ -21,7 +21,7 @@
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"
-        android:layout_height="470dp" />
+        android:layout_height="262dp" />
 
     <LinearLayout
         android:orientation="horizontal"
