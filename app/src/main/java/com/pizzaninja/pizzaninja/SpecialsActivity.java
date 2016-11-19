@@ -22,10 +22,16 @@ public class SpecialsActivity extends AppCompatActivity {
     OrderDetails od;
 
     public void bigSalad_click(View view) {
-        od.addItem(new OrderDetails.Item("Salad", "Big", 2.99));
+        od.addItem(new OrderDetails.Item("Big Salad", 2.99));
 
         //Show toast
     }
+
+    public void largePizza_click(View view) {
+        Intent intent = new Intent(SpecialsActivity.this, BuildPizzaActivity.class);
+        startActivity(intent);
+    }
+
 
     public void confirmOrder_click(View view) {
         Intent intent = new Intent(SpecialsActivity.this, ConfirmOrderActivity.class);

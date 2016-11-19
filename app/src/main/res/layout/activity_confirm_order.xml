@@ -15,12 +15,6 @@
         android:theme="@style/AppTheme.NoActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
-    <TextView
-        android:text="Confirm Order"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
-
     <include layout="@layout/content_confirm_order" />
 
 </LinearLayout>

@@ -8,8 +8,81 @@
     tools:context="com.pizzaninja.pizzaninja.BuildPizzaActivity"
     tools:showIn="@layout/activity_build_pizza">
 
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></LinearLayout>
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/toppingsList">
+
+            <CheckBox
+                android:text="Pepperoni"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox1"
+                android:checked="false" />
+
+            <CheckBox
+                android:text="Ham"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox2" />
+
+            <CheckBox
+                android:text="Sausage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox3" />
+
+            <CheckBox
+                android:text="Mushrooms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox4" />
+
+            <CheckBox
+                android:text="Onions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox5" />
+
+            <CheckBox
+                android:text="Green Olives"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox6" />
+
+            <CheckBox
+                android:text="Black Olives"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox7" />
+
+            <CheckBox
+                android:text="Green Peppers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox8" />
+
+            <CheckBox
+                android:text="Banana Peppers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox9" />
+        </LinearLayout>
+
+
+        <Button
+            android:text="Done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDone"
+            android:onClick="btnDone_click" />
+    </LinearLayout>
+
 </android.support.v4.widget.NestedScrollView>

@@ -1,5 +1,7 @@
 package com.pizzaninja.pizzaninja;
 
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,15 +20,24 @@ public class OrderDetails {
     }
     public static class Item {
         String name;
-        String size;
         Double price;
+        Double pricePerTopping;
+        ArrayList<String> toppings;
 
-        public Item(String name, String size, Double price) {
+        public Item(String name, Double price) {
             this.name = name;
             this.price = price;
-            this.size = size;
+            toppings = new ArrayList<>();
         }
+
+        public void addTopping(String t) {
+            toppings.add(t);
+            price += pricePerTopping;
+        }
+        public void setPricePerTopping(Double p) { pricePerTopping = p; }
+
     }
+
 //    public class Pizza extends Item {
 //        Integer numToppings;
 //    }
@@ -39,4 +50,6 @@ public class OrderDetails {
         OrderList.add(i);
         totalPrice += i.price;
     }
+
+
 }
