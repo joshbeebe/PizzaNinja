@@ -39,6 +39,10 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     }
 
     private void populateList() {
+        //Remove everything in list if necessary
+        if (myRoot.getChildCount() > 0) myRoot.removeAllViews();
+
+
         for (OrderDetails.Item item : od.OrderList) {
 
             LinearLayout itemDetail = new LinearLayout(this);
@@ -56,6 +60,14 @@ public class ConfirmOrderActivity extends AppCompatActivity {
             remove.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
             remove.setText(R.string.action_remove);
             remove.setTextSize(18);
+            remove.setTag(item.itemNum);
+            remove.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    removeItem((int) view.getTag());
+                    populateList();
+                }
+            });
 
             LinearLayout.LayoutParams rparams = new LinearLayout.LayoutParams(Toolbar.LayoutParams.WRAP_CONTENT, Toolbar.LayoutParams.WRAP_CONTENT);
             rparams.setMargins(0,0,px(15),0);
@@ -120,5 +132,9 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         float fpx = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, d, getResources().getDisplayMetrics());
         return (int) fpx;
 
+    }
+
+    void removeItem(int itemNum) {
+        od.removeItem(itemNum);
     }
 }

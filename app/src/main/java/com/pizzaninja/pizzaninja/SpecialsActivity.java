@@ -24,7 +24,6 @@ public class SpecialsActivity extends AppCompatActivity {
     public void bigSalad_click(View view) {
         od.addItem(new OrderDetails.Item("Big Salad", 2.99));
 
-        //Show toast
     }
 
     public void largePizza_click(View view) {
