@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.pizzaninja.pizzaninja.ConfirmOrderActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -13,8 +14,20 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:theme="@style/AppTheme.NoActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="Confirm Order" />
 
-    <include layout="@layout/content_confirm_order" />
+    <include layout="@layout/content_confirm_order"
+        android:layout_width="match_parent"
+        android:layout_height="500dp" />
+
+    <Button
+        android:text="Next"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:id="@+id/buttonNext"
+        android:layout_marginTop="30dp"
+        android:onClick="OpenCustomerInfo" />
 
 </LinearLayout>

@@ -20,5 +20,6 @@ public class CustomerInfoActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(CustomerInfoActivity.this, PaymentActivity.class);
         startActivity(intent);
+        finish();
     }
 }
