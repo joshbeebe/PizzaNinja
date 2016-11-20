@@ -3,7 +3,9 @@ package com.pizzaninja.pizzaninja;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -30,29 +32,24 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
-/**
- * A login screen that offers login via email/password.
- */
-public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
+public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+    SharedPreferences prefs;
+    ArrayList<String> Logins = new ArrayList<>();
     /**
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
 
-    /**
-     * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system.
-     */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "test@test.com:test", "bar@example.com:world"
-    };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
@@ -97,7 +94,67 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
 
-        mEmailView.setText("test@test.com");
+        mEmailView.setText("test");
+        mPasswordView.setText("test");
+
+        prefs = this.getSharedPreferences("com.pizzaninja.pizzaninja", Context.MODE_PRIVATE);
+        Set<String> logins = prefs.getStringSet("Logins", null);
+        if (logins != null)
+        {
+            Logins = new ArrayList<>(logins);
+
+            boolean nomatch = true;
+            for (String credential : Logins) {
+                String[] pieces = credential.split(":");
+                if (pieces[0].equals("test")) {
+                    nomatch = false;
+                }
+            }
+            if (nomatch) {
+                Logins.add("test:test");
+            }
+        }
+    }
+
+    public void NewAccount(View view)
+    {
+        Intent intent = new Intent(this, NewUserActivity.class);
+        startActivityForResult(intent, 1);
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK) {
+                String newlogin = data.getStringExtra("newlogin");
+                String[] newpieces = newlogin.split(":");
+                boolean nomatch = true;
+                for (String credential : Logins) {
+                    String[] pieces = credential.split(":");
+                    if (pieces[0].equals(newpieces[0])) {
+                        nomatch = false;
+                    }
+                }
+                if (nomatch) {
+                    Logins.add(newlogin);
+                    Set<String> logins = new HashSet<>(Logins);
+                    prefs.edit().putStringSet("Logins", logins).apply();
+                    Context context = getApplicationContext();
+                    CharSequence text = "User ID " + newpieces[0] + " created!";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
+                else
+                {
+                    Context context = getApplicationContext();
+                    CharSequence text = "User ID " + newpieces[0] + " already exists!";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
+            }
+        }
     }
 
     private void populateAutoComplete() {
@@ -142,7 +199,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         }
     }
-
 
     /**
      * Attempts to sign in or register the account specified by the login form.
@@ -197,12 +253,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     private boolean isEmailValid(String email) {
-        //TODO: Replace this with your own logic
-        return email.contains("@");
+        return email.length() > 3;
     }
 
     private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
         return password.length() > 3;
     }
 
@@ -312,25 +366,21 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         @Override
         protected Boolean doInBackground(Void... params) {
-            // TODO: attempt authentication against a network service.
-
             try {
                 // Simulate network access.
-                Thread.sleep(2000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 return false;
             }
 
-            for (String credential : DUMMY_CREDENTIALS) {
+            for (String credential : Logins) {
                 String[] pieces = credential.split(":");
                 if (pieces[0].equals(mEmail)) {
                     // Account exists, return true if the password matches.
                     return pieces[1].equals(mPassword);
                 }
             }
-
-            // TODO: register the new account here.
-            return true;
+            return false;
         }
 
         @Override

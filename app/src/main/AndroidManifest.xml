@@ -70,7 +70,8 @@
         <activity
             android:name=".BuildPizzaActivity"
             android:label="@string/title_activity_build_pizza"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".NewUserActivity"></activity>
     </application>
 
 </manifest>

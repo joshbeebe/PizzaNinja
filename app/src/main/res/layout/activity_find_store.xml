@@ -31,12 +31,13 @@
 
         <EditText
             android:layout_height="wrap_content"
-            android:hint="Zip"
+            android:hint="Zip Code"
             android:textColor="?attr/colorPrimaryDark"
             android:gravity="center_vertical|center_horizontal"
             android:maxLength="5"
             android:id="@+id/textZip"
-            android:layout_width="120dp" />
+            android:textAlignment="center"
+            android:layout_width="80dp" />
 
     </android.support.design.widget.TextInputLayout>
 

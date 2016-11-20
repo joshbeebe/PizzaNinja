@@ -1,6 +1,7 @@
 package com.pizzaninja.pizzaninja;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -146,6 +147,8 @@ public class RateUsActivity extends AppCompatActivity {
 
     public void Close(View view)
     {
+        Intent intent = new Intent();
+        setResult(RESULT_OK, intent);
         finish();
     }
 }
