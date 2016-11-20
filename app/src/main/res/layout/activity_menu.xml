@@ -15,7 +15,8 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:theme="@style/AppTheme.NoActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="Menu" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/menu_list"

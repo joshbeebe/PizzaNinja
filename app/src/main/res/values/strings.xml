@@ -16,7 +16,7 @@
 
     <string name="title_activity_main_menu">Main Menu</string>
     <string name="action_find_store">Find Store</string>
-    <string name="title_activity_find_store">Find Store</string>
+    <string name="title_activity_find_store">Find A Store</string>
 
     <string name="action_select_store">Select</string>
     <string name="action_view_ratings">View Ratings</string>

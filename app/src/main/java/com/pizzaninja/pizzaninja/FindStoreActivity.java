@@ -71,11 +71,17 @@ public class FindStoreActivity extends FragmentActivity implements OnMapReadyCal
     public void OpenRatings(View view)
     {
         Intent intent = new Intent(FindStoreActivity.this, RatingsActivity.class);
+        Bundle b = new Bundle();
+        b.putString("storenumber", storeNumber);
+        intent.putExtras(b);
         startActivity(intent);
     }
 
     public void CloseView(View view)
     {
+        Intent intent = new Intent();
+        intent.putExtra("storenumber", storeNumber);
+        setResult(RESULT_OK, intent);
         finish();
     }
 
