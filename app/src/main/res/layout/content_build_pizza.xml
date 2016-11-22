@@ -12,12 +12,13 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="531dp"
             android:id="@+id/toppingsList">
 
             <CheckBox
@@ -79,10 +80,11 @@
 
         <Button
             android:text="Done"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnDone"
-            android:onClick="btnDone_click" />
+            android:onClick="btnDone_click"
+            android:background="@color/colorPrimaryDark" />
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

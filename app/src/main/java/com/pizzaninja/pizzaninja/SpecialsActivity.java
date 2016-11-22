@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 public class SpecialsActivity extends AppCompatActivity {
+    OrderDetails od;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,21 +20,14 @@ public class SpecialsActivity extends AppCompatActivity {
         od = OrderDetails.getInstance();
     }
 
-    OrderDetails od;
-
     public void bigSalad_click(View view) {
         od.addItem(new OrderDetails.Item("Big Salad", 2.99));
-
+        finish();
     }
 
     public void largePizza_click(View view) {
         Intent intent = new Intent(SpecialsActivity.this, BuildPizzaActivity.class);
         startActivity(intent);
-    }
-
-
-    public void confirmOrder_click(View view) {
-        Intent intent = new Intent(SpecialsActivity.this, ConfirmOrderActivity.class);
-        startActivity(intent);
+        finish();
     }
 }
