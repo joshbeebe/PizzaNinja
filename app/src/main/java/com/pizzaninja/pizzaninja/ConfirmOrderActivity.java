@@ -39,6 +39,8 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     }
 
     private void populateList() {
+        double totalcost = 0.00;
+
         //Remove everything in list if necessary
         if (myRoot.getChildCount() > 0) myRoot.removeAllViews();
 
@@ -96,7 +98,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
             itemDetail.addView(itemRow);
             myRoot.addView(itemDetail);
 
-
+            totalcost += item.price;
 
             //Toppings
             for (String s: item.toppings) {
@@ -112,8 +114,15 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
                 myRoot.addView(topping);
             }
-
         }
+
+        double tax = totalcost * .06;
+        totalcost += tax;
+
+        TextView texttax = (TextView) findViewById(R.id.textTax);
+        texttax.setText("Tax: " + String.format("$%.2f", tax));
+        TextView texttotal = (TextView) findViewById(R.id.textTotal);
+        texttotal.setText("Total: " + String.format("$%.2f", totalcost));
     }
 
     public void Close(View view)
