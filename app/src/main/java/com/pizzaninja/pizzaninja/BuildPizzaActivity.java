@@ -1,5 +1,6 @@
 package com.pizzaninja.pizzaninja;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -25,10 +26,14 @@ public class BuildPizzaActivity extends AppCompatActivity {
 
 
     public void btnDone_click(View view) {
+        Bundle b = getIntent().getExtras();
+        String size = b.getString("pizzasize");
+        double cost = 9.99;
+        cost = b.getDouble("pizzacost");
         LinearLayout ll = (LinearLayout) findViewById(R.id.toppingsList);
         int count = ll.getChildCount();
 
-        OrderDetails.Item item = new OrderDetails.Item("Large Pizza", 8.99);
+        OrderDetails.Item item = new OrderDetails.Item(size + " Pizza", cost);
         item.pricePerTopping = 1.5;
 
         for (int i = 0; i < count; i++ ){
@@ -38,6 +43,8 @@ public class BuildPizzaActivity extends AppCompatActivity {
             }
         }
         od.addItem(item);
+        Intent theintent = new Intent();
+        setResult(RESULT_OK, theintent);
         finish();
     }
 }

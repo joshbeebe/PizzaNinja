@@ -1,5 +1,6 @@
 package com.pizzaninja.pizzaninja;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +18,6 @@ public class MenuActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private static MenuActivity ma = null;
     OrderDetails od;
 
     @Override
@@ -26,7 +27,7 @@ public class MenuActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         od = OrderDetails.getInstance();
-        AddItems();
+        FillItems();
 
         mRecyclerView = (RecyclerView) findViewById(R.id.menu_list);
         mRecyclerView.setHasFixedSize(true);
@@ -37,27 +38,83 @@ public class MenuActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    public static MenuActivity getInstance() {
-        if (ma == null) {
-            ma = new MenuActivity();
-        }
-        return ma;
-    }
-
     public void AddItem(String item)
     {
         if (item.contains("Pizza"))
         {
+            double cost = 10.99;
+            String size = "Large";
+            if (item.contains("Small"))
+            {
+                size = "Small";
+                cost = 6.99;
+            }
+            if (item.contains("Medium"))
+            {
+                size = "Medium";
+                cost = 8.99;
+            }
+            if (item.contains("XL"))
+            {
+                size = "XL";
+                cost = 12.99;
+            }
             Intent intent = new Intent(this, BuildPizzaActivity.class);
-            startActivity(intent);
+            Bundle b = new Bundle();
+            b.putString("pizzasize", size);
+            b.putDouble("pizzacost", cost);
+            intent.putExtras(b);
+            startActivityForResult(intent, 1);
         }
         else
         {
-            od.addItem(new OrderDetails.Item(item, 2.99));
+            double cost = 3.99;
+            switch (item)
+            {
+                case "Calzone":
+                    cost = 6.99;
+                    break;
+                case "Big Salad":
+                    cost = 4.99;
+                    break;
+                case "Wings":
+                    cost = 5.99;
+                    break;
+                case "Boneless Wings":
+                    cost = 5.99;
+                    break;
+                case "Garlic Cheese Bread":
+                    cost = 4.99;
+                    break;
+                case "Breadsticks":
+                    cost = 3.99;
+                    break;
+                case "Garlic Cream Cheese":
+                    cost = 1.99;
+                    break;
+                case "Garlic Butter":
+                    cost = 0.99;
+                    break;
+                case "Marinara":
+                    cost = 0.99;
+                    break;
+                case "Ranch Dressing":
+                    cost = 0.99;
+                    break;
+                case "French Dressing":
+                    cost = 0.99;
+                    break;
+            }
+            od.addItem(new OrderDetails.Item(item, cost));
+            Context context = getApplicationContext();
+            CharSequence text = "Added " + item;
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
         }
     }
 
-    private void AddItems()
+    private void FillItems()
     {
         feedsList = new ArrayList<>();
         for (int i = 0; i < 15; i++)
@@ -91,5 +148,18 @@ public class MenuActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(MenuActivity.this, ConfirmOrderActivity.class);
         startActivity(intent);
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK){
+                Context context = getApplicationContext();
+                CharSequence text = "Added Pizza";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
+        }
     }
 }

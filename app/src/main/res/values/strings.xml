@@ -35,7 +35,7 @@
 
     <string name="spec_item1">Large 1 Topping $8.99</string>
     <string name="action_add">Add</string>
-    <string name="spec_item2">Big Salad $4.99</string>
+    <string name="spec_item2">Big Salad $2.99</string>
     <string name="title_activity_confirm_order">Confirm Order</string>
     <string name="title_confirm_order">Your Order</string>
     <string name="action_remove">X</string>

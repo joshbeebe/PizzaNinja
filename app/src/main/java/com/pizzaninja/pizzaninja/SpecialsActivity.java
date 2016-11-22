@@ -1,5 +1,6 @@
 package com.pizzaninja.pizzaninja;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,6 +8,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 public class SpecialsActivity extends AppCompatActivity {
     OrderDetails od;
@@ -22,11 +24,20 @@ public class SpecialsActivity extends AppCompatActivity {
 
     public void bigSalad_click(View view) {
         od.addItem(new OrderDetails.Item("Big Salad", 2.99));
+        Context context = getApplicationContext();
+        CharSequence text = "Added Big Salad";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
         finish();
     }
 
     public void largePizza_click(View view) {
-        Intent intent = new Intent(SpecialsActivity.this, BuildPizzaActivity.class);
+        Intent intent = new Intent(this, BuildPizzaActivity.class);
+        Bundle b = new Bundle();
+        b.putString("pizzasize", "Large");
+        b.putDouble("pizzacost", 7.49);
+        intent.putExtras(b);
         startActivity(intent);
         finish();
     }

@@ -1,13 +1,7 @@
 package com.pizzaninja.pizzaninja;
 
-import android.widget.Toast;
-
 import java.util.ArrayList;
-import java.util.List;
 
-/**
- * Created by josh on 11/18/16.
- */
 
 public class OrderDetails {
     private static OrderDetails od = null;

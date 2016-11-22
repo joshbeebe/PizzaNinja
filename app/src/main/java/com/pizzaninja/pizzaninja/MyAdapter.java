@@ -1,7 +1,6 @@
 package com.pizzaninja.pizzaninja;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -9,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -54,8 +52,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder>{
         @Override
         public void onClick(View v) {
             String item = textView.getText().toString();
-            MenuActivity ma = MenuActivity.getInstance();
-            //ma.AddItem(item);
+            if (mContext instanceof MenuActivity)
+            {
+                ((MenuActivity)mContext).AddItem(item);
+            }
+            /*MenuActivity ma = MenuActivity.getInstance();
+            ma.AddItem(item);*/
         }
     }
 
