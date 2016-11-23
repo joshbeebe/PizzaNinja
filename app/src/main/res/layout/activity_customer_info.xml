@@ -77,7 +77,8 @@
                 android:inputType="text"
                 android:textColor="@color/colorPrimaryDark"
                 android:hint="State"
-                android:textColorLink="?attr/colorPrimaryDark" />
+                android:textColorLink="?attr/colorPrimaryDark"
+                android:maxLength="2" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -88,7 +89,8 @@
                 android:layout_weight="1"
                 android:textColor="@color/colorPrimaryDark"
                 android:hint="Zip"
-                android:textColorLink="?attr/colorPrimaryDark" />
+                android:textColorLink="?attr/colorPrimaryDark"
+                android:maxLength="5" />
         </LinearLayout>
 
         <EditText
@@ -100,7 +102,8 @@
             android:textColor="@color/colorPrimaryDark"
             android:hint="Phone"
             android:textColorLink="?attr/colorPrimaryDark"
-            android:layout_marginBottom="40dp" />
+            android:layout_marginBottom="40dp"
+            android:maxLength="12" />
     </LinearLayout>
 
     <Button

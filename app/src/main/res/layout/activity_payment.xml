@@ -51,7 +51,8 @@
                 android:id="@+id/editTextNumber"
                 android:hint="Card Number"
                 android:textColor="?attr/colorPrimaryDark"
-                android:layout_marginRight="40dp" />
+                android:layout_marginRight="40dp"
+                android:maxLength="16" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -60,13 +61,14 @@
                 android:ems="10"
                 android:id="@+id/editTextCVV"
                 android:hint="3 Digit CVV #"
-                android:textColor="?attr/colorPrimaryDark" />
+                android:textColor="?attr/colorPrimaryDark"
+                android:maxLength="3" />
         </LinearLayout>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:inputType="date"
             android:ems="10"
             android:id="@+id/editTextExpiration"
             android:hint="Expiration Date"
