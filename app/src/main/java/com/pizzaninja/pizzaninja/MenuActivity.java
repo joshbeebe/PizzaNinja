@@ -11,14 +11,13 @@ import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MenuActivity extends AppCompatActivity {
     private ArrayList<FeedItem> feedsList;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    OrderDetails od;
+    OrderDetailsPN od;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +25,7 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-        od = OrderDetails.getInstance();
+        od = OrderDetailsPN.getInstance();
         FillItems();
 
         mRecyclerView = (RecyclerView) findViewById(R.id.menu_list);
@@ -105,7 +104,7 @@ public class MenuActivity extends AppCompatActivity {
                     cost = 0.99;
                     break;
             }
-            od.addItem(new OrderDetails.Item(item, cost));
+            od.addItem(new OrderDetailsPN.Item(item, cost));
             Context context = getApplicationContext();
             CharSequence text = "Added " + item;
             int duration = Toast.LENGTH_SHORT;

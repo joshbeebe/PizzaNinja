@@ -2,26 +2,18 @@ package com.pizzaninja.pizzaninja;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.Iterator;
 
 public class ConfirmOrderActivity extends AppCompatActivity {
 
-    OrderDetails od;
+    OrderDetailsPN od;
     LinearLayout myRoot;
 
     @Override
@@ -31,7 +23,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
-        od = OrderDetails.getInstance();
+        od = OrderDetailsPN.getInstance();
 
         myRoot = (LinearLayout) findViewById(R.id.itemList);
 
@@ -45,7 +37,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         if (myRoot.getChildCount() > 0) myRoot.removeAllViews();
 
 
-        for (OrderDetails.Item item : od.OrderList) {
+        for (OrderDetailsPN.Item item : od.OrderList) {
 
             LinearLayout itemDetail = new LinearLayout(this);
             LinearLayout itemRow = new LinearLayout(this);

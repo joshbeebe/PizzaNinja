@@ -3,15 +3,13 @@ package com.pizzaninja.pizzaninja;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
 public class SpecialsActivity extends AppCompatActivity {
-    OrderDetails od;
+    OrderDetailsPN od;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +17,11 @@ public class SpecialsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_specials);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-        od = OrderDetails.getInstance();
+        od = OrderDetailsPN.getInstance();
     }
 
     public void bigSalad_click(View view) {
-        od.addItem(new OrderDetails.Item("Big Salad", 2.99));
+        od.addItem(new OrderDetailsPN.Item("Big Salad", 2.99));
         Context context = getApplicationContext();
         CharSequence text = "Added Big Salad";
         int duration = Toast.LENGTH_SHORT;

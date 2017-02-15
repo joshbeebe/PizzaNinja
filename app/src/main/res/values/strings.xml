@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Pizza Ninja</string>
+    <string name="app_name">Eat All the Things</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_email">User ID</string>
+    <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign In</string>
     <string name="action_sign_in_short">Sign In</string>
@@ -14,7 +14,7 @@
     <string name="title_activity_Login">Login</string>
 
 
-    <string name="title_activity_main_menu">Main Menu</string>
+    <string name="title_activity_main_menu">Welcome</string>
     <string name="action_find_store">Find Store</string>
     <string name="title_activity_find_store">Find A Store</string>
 
@@ -57,4 +57,7 @@
     <string name="title_status">Status: In the Oven</string>
     <string name="action_confirm"><![CDATA[Confirm & View Order]]></string>
     <string name="title_activity_build_pizza">Build Pizza</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class BuildPizzaActivity extends AppCompatActivity {
 
-    OrderDetails od = OrderDetails.getInstance();
+    OrderDetailsPN od = OrderDetailsPN.getInstance();
     ArrayList<String> toppings;
 
     @Override
@@ -33,7 +33,7 @@ public class BuildPizzaActivity extends AppCompatActivity {
         LinearLayout ll = (LinearLayout) findViewById(R.id.toppingsList);
         int count = ll.getChildCount();
 
-        OrderDetails.Item item = new OrderDetails.Item(size + " Pizza", cost);
+        OrderDetailsPN.Item item = new OrderDetailsPN.Item(size + " Pizza", cost);
         item.pricePerTopping = 1.5;
 
         for (int i = 0; i < count; i++ ){
